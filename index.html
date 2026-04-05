@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FreeGamers | ULTRA UI</title>
+
+  <!-- SEO BÁSICO -->
+  <meta name="description"
+    content="FreeGamers es un clan de Free Fire casual con jugadores activos, reclutamiento abierto. ¡Únete ahora!">
+  <meta name="keywords"
+    content="Free Fire clan, FreeGamers, clan Free Fire EEUU, reclutamiento Free Fire, equipo Free Fire, gamers">
+  <meta name="author" content="FreeGamers Clan Free Fire">
+
+  <!-- RESPONSIVE -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- GOOGLE INDEX -->
+  <meta name="robots" content="index, follow">
+
+  <!-- OPEN GRAPH (FACEBOOK / DISCORD / WHATSAPP) -->
+  <meta property="og:title" content="FreeGamers | Clan de Free Fire">
+  <meta property="og:description"
+    content="Únete al clan FreeGamers 🔥 Reclutamiento abierto, jugadores activos.">
+  <meta property="og:image" content="poster-og.png">
+  <meta property="og:url" content="https://tuweb.com">
+  <meta property="og:type" content="website">
+
+  <!-- TWITTER CARDS -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FreeGamers | Clan Free Fire">
+  <meta name="twitter:description" content="Clan activo con reclutamiento abierto. ¡Aplica ahora!">
+  <meta name="twitter:image" content="poster-og.png">
+
+  <!-- FAVICON -->
+  <link rel="icon" href="logo.png">
+
+  <!-- CANONICAL -->
+  <link rel="canonical" href="https://tuweb.com">
+
+  <!-- DATOS ESTRUCTURADOS (GOOGLE) -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "FreeGamers",
+  "url": "https://tuweb.com",
+  "logo": "logo.png",
+  "sameAs": [
+    "https://discord.gg/tuclan",
+    "https://facebook.com/tuclan",
+    "https://instagram.com/tuclan"
+  ]
+}
+</script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: #020617;
+      color: white;
+    }
+
+    /* FONDO ANIMADO */
+    body::before {
+      content: "";
+      position: fixed;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(0, 195, 255, 0.1) 10%, transparent 40%);
+      animation: moveBg 20s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes moveBg {
+      from {
+        transform: translate(0, 0)
+      }
+
+      to {
+        transform: translate(-50%, -50%)
+      }
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(90deg, #00c3ff, #0044ff);
+      box-shadow: 0 0 25px #00c3ff;
+    }
+
+    header h1 {
+      font-size: 3em;
+    }
+
+    .glow {
+      color: white;
+      text-shadow: 0 0 10px #00c3ff, 0 0 25px #00c3ff;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2.5px;
+      padding: 15px;
+      background: #010101;
+      border-bottom: 1px solid #00c3ff;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+      padding: 8px 8px;
+      font-size: 0.9em;
+    }
+
+    nav a:hover {
+      background: #00c3ff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px #00c3ff;
+    }
+
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .card {
+      padding: 25px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(0, 195, 255, 0.3);
+      backdrop-filter: blur(12px);
+      transition: 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: -100%;
+      background: linear-gradient(120deg, transparent, rgba(0, 195, 255, 0.4), transparent);
+      transition: 0.5s;
+    }
+
+    .card:hover::after {
+      left: 100%;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 0 25px #00c3ff;
+    }
+
+    .rank {
+      color: #aaa;
+      font-size: 0.9em
+    }
+
+    .panel {
+      margin-top: 30px;
+      padding: 25px;
+      border-radius: 15px;
+      background: #010101;
+      border: 1px solid #00c3ff;
+      box-shadow: 0 0 20px rgba(0, 195, 255, 0.3);
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .stat {
+      padding: 15px 25px;
+      background: #020617;
+      border: 1px solid #00c3ff;
+      border-radius: 10px;
+    }
+
+    input {
+      padding: 12px;
+      margin: 10px;
+      width: 250px;
+      background: #020617;
+      border: 1px solid #00c3ff;
+      color: white;
+    }
+
+    button {
+      padding: 12px 30px;
+      border: none;
+      background: linear-gradient(90deg, #00c3ff, #0044ff);
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px #00c3ff;
+    }
+
+    /* BARRA TOP ESTILO GAME */
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 10px 20px;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #00c3ff;
+      z-index: 9999;
+      /* clave */
+    }
+
+    .topbar span {
+      font-size: 0.8em;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #000;
+      margin-top: 40px;
+    }
+
+    /* =========================
+   RESPONSIVE PRO MOBILE
+========================= */
+
+    /* Ajuste general */
+    body {
+      padding-top: 60px;
+      /* evita que el topbar tape contenido */
+    }
+
+    /* HEADER */
+    header h1 {
+      font-size: 2.2em;
+    }
+
+    @media (max-width:600px) {
+      header h1 {
+        font-size: 1.6em;
+      }
+    }
+
+    /* NAV */
+    nav {
+      flex-wrap: wrap;
+    }
+
+    /* PANEL STATS */
+    .stats {
+      flex-direction: row;
+    }
+
+    @media (max-width:600px) {
+      .stats {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+
+    /* INPUTS (por si los vuelves a usar) */
+    input {
+      width: 90%;
+      max-width: 300px;
+    }
+
+    /* BOTÓN */
+    button {
+      width: 90%;
+      max-width: 300px;
+    }
+
+    /* TOPBAR */
+    .topbar {
+      flex-direction: row;
+      font-size: 0.7em;
+    }
+
+    @media (max-width:500px) {
+      .topbar {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+      }
+    }
+
+    /* SECCIONES */
+    .section {
+      padding: 40px 15px;
+    }
+
+    /* PANEL */
+    .panel {
+      padding: 20px;
+    }
+
+    /* TEXTO GENERAL */
+    p {
+      font-size: 0.95em;
+    }
+
+    @media (max-width:480px) {
+      p {
+        font-size: 0.85em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <span>
+
+      <!-- Inicio. radio hosting USAstreams.com html5 player -->
+      <!-- Licencia: GRATIS-XDF4543ERF -->
+      <style type="text/css">
+        audio {
+          margin: 0 auto;
+        }
+      </style>
+      <div class="audio-player">
+        <p>
+          <audio autoplay="autoplay" controls="controls" id="audioAJDDHR" preload="auto">
+            <source src="https://stream.zeno.fm/1crah5hlmvatv" type="audio/mpeg" /> Su navegador no soporta AUDIO.<br />
+          </audio>
+        </p>
+      </div>
+      <!-- En players responsive puede modificar el weight a sus necesidades, Por favor no modifique el resto del codigo para poder seguir ofreciendo este servicio gratis  -->
+      <!-- Fin. USAstreams.com html5 player -->
+
+    </span>
+  </div>
+
+  <header>
+    <img src="logo.png" alt="Logo FreeGamers" width="100" height="auto">
+    <h1>FREEGAMERS</h1>
+    <p class="glow">⚡ CLAN FREE FIRE ⚡</p>
+  </header>
+
+  <nav>
+    <a href="/">Inicio</a>
+    <a href="https://play.google.com/store/apps/details?id=free.gamers" target="_blank">App</a>
+    <a href="#miembros">Miembros</a>
+    <a href="#info">Clan</a>
+    <a href="#reclutamiento">Unirse</a>
+  </nav>
+
+  <section class="section">
+    <h2 class="glow">🔥 Descarga Free Fire 🔥</h2>
+    <div class="cards">
+      <div class="card">
+        <p>Free Fire</p><br><a href="https://play.google.com/store/apps/details?id=com.dts.freefireth" target="_blank">
+          <button>Android</button>
+        </a>
+        <br>
+        <br>
+        <a href="https://apps.apple.com/us/app/free-fire-x-jujutsu-kaisen/id1300146617" target="_blank">
+          <button>iOS</button>
+        </a>
+      </div>
+      <div class="card">
+        <p>Free Fire Max</p><br><a href="https://play.google.com/store/apps/details?id=com.dts.freefiremax&pli=1"
+          target="_blank">
+          <button>Android</button>
+        </a>
+        <br>
+        <br>
+        <a href="https://apps.apple.com/do/app/free-fire-max-x-jujutsu-kaisen/id1480516829" target="_blank">
+          <button>iOS</button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="info">
+    <h2 class="glow">ℹ️ Información del Clan ℹ️</h2>
+
+    <div class="panel">
+      <div class="stats">
+        <div class="stat">🌍 Región: EE.UU.</div>
+        <div class="stat">🔥 Miembros: 1/20</div>
+        <div class="stat">⚡ Nivel: 1</div>
+        <div class="stat">👥 Mixto</div>
+        <div class="stat">🕹️ Casual</div>
+        <div class="stat">📅 Fundación: 1/Abril/2026</div>
+        <div class="stat">💎​​ Creador: <a href="https://www.youtube.com/@LedesmitaDJ" target="_blank"
+            style="text-decoration: none; color: white;">@LedesmitaDJ</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="miembros">
+    <h2 class="glow">💎​ Miembros 💎​</h2>
+    <div class="cards">
+      <div class="card"><img src="miembro-ledesmita.jpg" alt="Ledesmita" style="width: 40vh; align-items: center;"><br><video
+          class="verificado" width="20" height="20" autoplay="true" loop="true">
+          <source src="FF-V.webm" type="video/webm" />
+        </video> Ledesmita<br><span class="rank">Creador del Clan, Lider, Capitan.</span></div>
+      <div class="card">Próximo Miembro<br><span class="rank">Únete al clan.</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="mejores">
+    <h2 class="glow">💎​ Los Mejores del Clan 💎​</h2>
+    <div class="cards">
+      <div class="card">
+        <h2 class="glow">🔥 Mayor Rango de BR 🔥</h2> <br><br><img src="miembro-ledesmita.jpg" alt="Ledesmita"
+          style="width: 40vh; align-items: center;"><br><video class="verificado" width="20" height="20" autoplay="true" loop="true">
+          <source src="FF-V.webm" type="video/webm" />
+        </video> Ledesmita<br><br><span class="rank"><img
+            src="https://manuelita.gg/logos-free-fire/wp-content/uploads/2021/10/Diamante-2.png" alt="Diamante 2"
+            width="100" height="auto"></span>
+      </div>
+      <div class="card">
+        <h2 class="glow">🔥 Mayor Rango de DE 🔥</h2> <br><br><img src="miembro-ledesmita.jpg" alt="Ledesmita"
+          style="width: 40vh; align-items: center;"><br><video class="verificado" width="20" height="20" autoplay="true" loop="true">
+          <source src="FF-V.webm" type="video/webm" />
+        </video> Ledesmita<br><br><span class="rank"><img
+            src="https://manuelita.gg/logos-free-fire/wp-content/uploads/2021/10/Platino-3.png" alt="Platino 3"
+            width="100" height="auto"></span>
+      </div>
+      <div class="card">
+        <h2 class="glow">🔥 Mayor cantidad de victorias en DE 🔥</h2> <br><br><img src="miembro-ledesmita.jpg" alt="Ledesmita"
+          style="width: 40vh; align-items: center;"><br><video class="verificado" width="20" height="20" autoplay="true" loop="true">
+          <source src="FF-V.webm" type="video/webm" />
+        </video> Ledesmita<br><br><span class="rank"><img
+            src="Rachas-de-Victorias-DE-6.png" alt="Platino 3"
+            width="100" height="auto"></span>
+      </div>
+    </div>
+    <p>* Se actualiza todos los Domingos entre las 3pm y 6pm hora de Colombia</p>
+  </section>
+
+  <section class="section" id="reclutamiento">
+    <h2 class="glow">🏆 Reclutamiento 🏆</h2>
+
+    <div class="panel">
+      <p>⚡ Nivel mínimo: 10+</p>
+      <p>🔥 Rango mínimo: Oro</p>
+      <p>🎯 K/D Cualquiera</p>
+      <p>🎮 Actividad minima obligatoria: 1 Día/Semana</p>
+      <p>💬 Uso de WhatsApp requerido</p>
+      <p>🚫 No ser tóxico (respeto obligatorio)</p>
+
+      <br>
+      <a href="https://chat.whatsapp.com/I7WeR0jYL2BAWU6wU1YS81?mode=gi_t" target="_blank">
+        <button onclick="alert('Revisa si cumples con los requisitos 🚀')">Unirme</button>
+      </a>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>© 2026 FreeGamers</p>
+  </footer>
+
+</body>
+
+</html>
