@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://freegamersclanff.github.io/sitemap.xml
